@@ -60,7 +60,7 @@ class LinkedList {
         const node = new LinkedListNode(val);
         this.tail.next = node;
         this.tail = node;
-        // node.next = null;
+        node.next = null;
         
         this.size++;
     }
@@ -98,6 +98,83 @@ class LinkedList {
         }
     }
 
+    // delete first element in the list
+    deleteFirst() {
+        const val = this.head.value;
+        this.head = this.head.next;
+
+        if (this.head === null) this.tail === null;
+        this.size--;
+        return val;
+    }
+
+    // delete last element in the list
+    deleteLast() {
+        if (this.size <= 1) return this.deleteFirst();
+
+        let secondLast = this.get(this.size - 2);
+        const val = this.tail.value;
+
+        this.tail = secondLast;
+        this.tail.next = null;
+
+        this.size--;
+        return val;
+    }
+
+    // create a function that's return (size - 2) index position
+    // because last index is (size - 1)
+    get(index) {
+        let node = this.head;
+        for (let i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return node;
+    }
+
+    // delete at particular index
+
+    deleteAt(index) {
+        if (index === 0) return this.deleteFirst();
+        if (index === this.size - 1) return this.deleteLast();
+
+        const prev = this.get(index - 1);
+        const val = prev.next.value;
+
+        prev.next = prev.next.next;
+
+        this.size--;
+        return val;
+    }
+    /*
+    deleteAt(index) {
+        if (index === 0) return this.deleteFirst();
+        if (index === this.size - 1) return this.deleteLast();
+
+        let prev = null;
+        let curr = this.head;
+        let i = 0;
+        while (curr !== null && i < index) {
+            prev = curr;
+            curr = curr.next;
+            i++;
+        }
+        const val = curr.value;
+        prev.next = curr.next;
+        this.size--; 
+        return val;
+
+        // if (i === index) {
+        //     const val = curr.value;
+        //     prev.next = curr.next;
+        //     this.size--; 
+        //     return val;
+        // }
+    }
+    */
+
+
+
     // prints the list
     printList() {
         let curr = this.head;
@@ -128,7 +205,16 @@ linkedList.printList();
 // console.log(linkedList.getTail());
 // console.log(linkedList.getSize());
 
-linkedList.inserAt(9, 4);
+// linkedList.inserAt(9, 4);
+// linkedList.printList();
+// console.log(linkedList.deleteFirst());
+// linkedList.printList();
+// console.log(linkedList.deleteLast());
+// linkedList.printList();
+// console.log(linkedList.deleteLast());
+// linkedList.printList();
+
+console.log(linkedList.deleteAt(3));
 linkedList.printList();
 
 
