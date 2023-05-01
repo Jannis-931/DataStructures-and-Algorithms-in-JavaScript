@@ -65,15 +65,47 @@ class LinkedList {
         this.size++;
     }
 
+    // insert elemant in particular index
+    inserAt(val, index) {
+        if (index === 0) {
+            this.insertFirst(val);
+            return;
+        }
+
+        if (index === this.size) {
+            this.insertLast(val);
+            return;
+        }
+
+        // using two pointer
+        // prev goes (i - 1) and curr goes (i)
+        let prev = null;
+        let curr = this.head;
+        let i = 0;
+
+        while (curr !== null && i < index) {
+            prev = curr;
+            curr = curr.next;
+            i++;
+        }
+
+        if (i === index) {
+            const node = new LinkedListNode(val);
+            prev.next = node;
+            node.next = curr;
+
+            this.size++;
+        }
+    }
 
     // prints the list
     printList() {
-        let current = this.head;
+        let curr = this.head;
         let str = '';
 
-        while (current) {   // current !== null
-            str += current.value + ' -> ';
-            current = current.next;
+        while (curr) {   // curr !== null
+            str += curr.value + ' -> ';
+            curr = curr.next;
         };
         console.log(str + 'END');
     }
@@ -87,12 +119,16 @@ linkedList.insertFirst(2);
 linkedList.insertFirst(8);
 linkedList.insertFirst(17);
 linkedList.printList();
-console.log(linkedList.getSize());
+// console.log(linkedList.getSize());
 // insert last
-linkedList.insertLast(99);
-linkedList.insertLast(100);
+// linkedList.insertLast(99);
+// linkedList.insertLast(100);
+// linkedList.printList();
+// console.log(linkedList.getHead());
+// console.log(linkedList.getTail());
+// console.log(linkedList.getSize());
+
+linkedList.inserAt(9, 4);
 linkedList.printList();
-console.log(linkedList.getHead());
-console.log(linkedList.getTail());
-console.log(linkedList.getSize());
+
 
