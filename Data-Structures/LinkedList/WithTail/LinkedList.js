@@ -132,8 +132,18 @@ class LinkedList {
         return node;
     }
 
-    // delete at particular index
+    find(val) {
+        let node = this.head;
+        while (node) {  // node !== null
+            if (node.value === val) {
+                return node.value;
+            }
+            node = node.next;
+        }
+        return null;  // if not found
+    }
 
+    // delete at particular index
     deleteAt(index) {
         if (index === 0) return this.deleteFirst();
         if (index === this.size - 1) return this.deleteLast();
@@ -213,8 +223,6 @@ linkedList.printList();
 // linkedList.printList();
 // console.log(linkedList.deleteLast());
 // linkedList.printList();
-
-console.log(linkedList.deleteAt(3));
-linkedList.printList();
-
-
+// console.log(linkedList.deleteAt(3));
+// linkedList.printList();
+// console.log(linkedList.find(10))
