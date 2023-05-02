@@ -120,8 +120,8 @@ class DoublyLinkedList {
     const p = this.find(after);
 
     if (p === null) {
-        console.log('does not exit');
-        return;  // if not give 'return' than it's give error
+      console.log("does not exit");
+      return; // if not give 'return' than it's give error
     }
 
     const node = new DoublyLinkedListNode(val);
@@ -129,22 +129,21 @@ class DoublyLinkedList {
     p.next = node;
     node.prev = p;
     if (node.next !== null) {
-        node.next.prev = node;
+      node.next.prev = node;
     }
     this.size++;
   }
-
 
   // find a value
   find(val) {
     let curr = this.head;
     while (curr) {
-        if (curr.value === val) {
-            return curr;
-        }
-        curr = curr.next;
+      if (curr.value === val) {
+        return curr;
+      }
+      curr = curr.next;
     }
-    return null
+    return null;
   }
 
   // remove head of the list and return it
@@ -160,15 +159,15 @@ class DoublyLinkedList {
   // remove last element of the list
   deleteLast() {
     if (this.size <= 1) {
-        this.deleteFirst();
-        return;
+      this.deleteFirst();
+      return;
     }
 
     let prev = null;
     let curr = this.head;
     while (curr.next) {
-        prev = curr;
-        curr = curr.next;
+      prev = curr;
+      curr = curr.next;
     }
 
     const val = curr.value;
@@ -191,12 +190,9 @@ class DoublyLinkedList {
       i++;
     }
 
-    const val = curr.next.value;
+    const val = curr.value;
+    curr.next.prev = prev;
     prev.next = curr.next;
-    if (curr.next !== null) {
-      prev.next.prev = prev;
-    }
-    // curr.next.prev = prev;
 
     this.size--;
     return val;
@@ -205,31 +201,30 @@ class DoublyLinkedList {
   // print list
   printList() {
     let curr = this.head;
-    let str = '';
+    let str = "";
     while (curr) {
-        str += curr.value + ' -> ';
-        curr = curr.next;
+      str += curr.value + " -> ";
+      curr = curr.next;
     }
-    console.log(str + 'END')
+    console.log(str + "END");
   }
 
   // reverse doubly linked list
   reverseList() {
     let last = null;
     let curr = this.head;
-    let str = '';
+    let str = "";
     while (curr) {
-        last = curr;
-        curr = curr.next;
+      last = curr;
+      curr = curr.next;
     }
 
     while (last) {
-        str += last.value + ' -> ';
-        last = last.prev;
+      str += last.value + " -> ";
+      last = last.prev;
     }
-    console.log(str + 'START');
+    console.log(str + "START");
   }
-
 }
 
 const doublyLinkedList = new DoublyLinkedList();
@@ -252,5 +247,3 @@ doublyLinkedList.printList();
 // console.log(doublyLinkedList.deleteLast());
 console.log(doublyLinkedList.deleteAt(2));
 doublyLinkedList.printList();
-
-Data-Structures-and-Algorithms-in-JavaScript 
