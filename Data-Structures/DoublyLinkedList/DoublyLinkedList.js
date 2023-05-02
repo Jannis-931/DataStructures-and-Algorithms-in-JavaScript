@@ -146,6 +146,37 @@ class DoublyLinkedList {
     }
     return null
   }
+
+  // remove head of the list and return it
+  deleteFirst() {
+    const val = this.head.value;
+    this.head = this.head.next;
+    this.head.prev = null;
+
+    this.size--;
+    return val;
+  }
+
+  // remove last element of the list
+  deleteLast() {
+    if (this.size <= 1) {
+        this.deleteFirst();
+        return;
+    }
+
+    let prev = null;
+    let curr = this.head;
+    while (curr.next) {
+        prev = curr;
+        curr = curr.next;
+    }
+
+    const val = curr.value;
+    prev.next = null;
+    this.size--;
+    return val;
+  }
+
   // print list
   printList() {
     let curr = this.head;
@@ -188,6 +219,9 @@ doublyLinkedList.printList();
 // doublyLinkedList.printList();
 // doublyLinkedList.insertAt(20, 0);
 // doublyLinkedList.printList();
-doublyLinkedList.insertAfter(14, 99);
-doublyLinkedList.printList();
-doublyLinkedList.reverseList();
+// doublyLinkedList.insertAfter(14, 99);
+// doublyLinkedList.printList();
+// doublyLinkedList.reverseList();
+// console.log(doublyLinkedList.deleteFirst());
+// console.log(doublyLinkedList.getLast())
+// console.log(doublyLinkedList.deleteLast());
