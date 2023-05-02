@@ -136,7 +136,7 @@ class LinkedList {
         let node = this.head;
         while (node) {  // node !== null
             if (node.value === val) {
-                return node.value;
+                return node;
             }
             node = node.next;
         }
