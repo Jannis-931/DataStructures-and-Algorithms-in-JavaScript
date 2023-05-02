@@ -177,6 +177,31 @@ class DoublyLinkedList {
     return val;
   }
 
+  // delete a particular index
+  deleteAt(index) {
+    if (index === 0) return this.deleteFirst();
+    if (index === this.size - 1) return this.deleteLast();
+
+    let prev = null;
+    let curr = this.head;
+    let i = 0;
+    while (curr !== null && i < index) {
+      prev = curr;
+      curr = curr.next;
+      i++;
+    }
+
+    const val = curr.next.value;
+    prev.next = curr.next;
+    if (curr.next !== null) {
+      prev.next.prev = prev;
+    }
+    // curr.next.prev = prev;
+
+    this.size--;
+    return val;
+  }
+
   // print list
   printList() {
     let curr = this.head;
@@ -225,3 +250,7 @@ doublyLinkedList.printList();
 // console.log(doublyLinkedList.deleteFirst());
 // console.log(doublyLinkedList.getLast())
 // console.log(doublyLinkedList.deleteLast());
+console.log(doublyLinkedList.deleteAt(2));
+doublyLinkedList.printList();
+
+Data-Structures-and-Algorithms-in-JavaScript 
