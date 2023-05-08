@@ -1,2 +1,2 @@
 # Data-Structures-and-Algorithms-in-JavaScript
-![Alt Text](images)
+![Alt Text](Screenshot (45).png)
