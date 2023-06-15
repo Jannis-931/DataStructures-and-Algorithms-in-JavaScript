@@ -10,3 +10,11 @@
 9. **`Traversing a Linked List`:** This pattern involves iterating through a linked list node by node, usually using a while loop. This pattern can be useful when you need to process each node in the linked list, for example, to print the elements or to perform some computation on each element.
 10. **`Slow/Fast Pointer Technique`:** This pattern involves using two pointers to traverse the linked list at different speeds. The slow pointer moves one node at a time, while the fast pointer moves two nodes at a time. This pattern can be useful when you need to detect loops or find the middle node of a linked list.
 11. **`Recursive Approach`:** This pattern involves solving problems recursively, by breaking down the problem into smaller subproblems that can be solved using the same approach. This pattern can be useful when you need to traverse a linked list in a recursive manner, or to solve problems that require backtracking or memoization.
+
+
+### Data Structures Need to Solve Linked List Problems:
+
+- **Stack**: A stack can be used for operations such as reversing a linked list or implementing algorithms that require a Last-In-First-Out (LIFO) behavior.
+- **Queue**: A queue can be used for operations such as implementing a breadth-first search (BFS) or maintaining a FIFO behavior.
+- **Hash table**: A hash table can be used for efficient lookup and retrieval of elements based on their keys. In some linked list problems, a hash table can help in optimizing certain operations.
+- **Set**: A set data structure can be useful for maintaining a collection of unique elements or checking for the presence of a specific value.
