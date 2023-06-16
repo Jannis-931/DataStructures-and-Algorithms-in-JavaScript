@@ -1,6 +1,6 @@
 # Sorting:
 
-### Bubble Sort:
+### 1. Bubble Sort:
 - Bubble sort also known as Sinking Sort/ Exchange Sort.
 - Bubble sort also known as inplace sorting algorithm.
 - It's a stable sorting algorithm.
@@ -10,12 +10,11 @@ Time Complexity:
 - Worst Case: O(n^2) => arry is descending order or whatever.
 <img src="https://github.com/sajib-mandal/DataStructures-and-Algorithms-in-JavaScript/blob/main/images/bubblesort.jpg" alt="bubblesort" height="400" weight="420">
 
-### Selection Sort:
-- As a name suggest you going to select an element and put it at right position. 
-- It is done by two ways: select max element and put it correct position or select min element and put it correct position.
-- It's not stable.
-- It performs well on small size arr.
+### 2: Selection Sort:
+- As the name suggest selection sort is select an element an insert it's correct position.
+- There are two ways select an element: min or max element.
+- This algorithm is good for small size of the array.
 
 Time Complexity:
-- Best Case: O(n^2)
-- Worst Case: also O(n^2)
+- Worst Case: O(n^2)
+- Best Case: also O(n^2)
