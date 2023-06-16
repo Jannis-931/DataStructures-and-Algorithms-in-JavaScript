@@ -1,6 +1,6 @@
 # Sorting:
 
-### Bubble Sort:
+### 1. Bubble Sort:
 - Bubble sort also known as Sinking Sort/ Exchange Sort.
 - Bubble sort also known as inplace sorting algorithm.
 - It's a stable sorting algorithm.
