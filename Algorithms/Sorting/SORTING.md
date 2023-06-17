@@ -34,3 +34,7 @@ Time Complexity:
    1. You given numbers 1 to N, find the messing number.
    2. You given unsorted array find smallest or positive messing number.
    3. You given numbers 1 to N, find the duplicate number.
+
+**Tips**:
+- If range is given by [0, N], then every element will be at `index = value`.
+- If range is given by [1, N], then every element will be at `index = value - 1` or `value = index + 1`.
