@@ -27,3 +27,10 @@ Time Complexity:
 Time Complexity:
 - Worst Case: O(n^2)
 - Best Case: O(n)
+
+### Cyclic Sort:
+- `When given numbers from range(1, N) use Cyclic Sort.`
+- Ex:
+   1. You given numbers 1 to N, find the messing number.
+   2. You given unsorted array find smallest or positive messing number.
+   3. You given numbers 1 to N, find the duplicate number.
