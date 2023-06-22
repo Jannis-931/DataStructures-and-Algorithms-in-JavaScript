@@ -45,7 +45,7 @@ Time Complexity:
 
 ### Merge Sort:
 
-`**STEPS**`:
+**`STEPS`**:
  1. Divide array into two parts.
  2. Get both part sorted via RECURSION.
  3. Merge two sorted parts.
