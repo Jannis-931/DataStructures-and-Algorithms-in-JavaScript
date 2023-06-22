@@ -1,5 +1,6 @@
 # Sorting:
 
+# Sorting Without Recursion
 ### 1. Bubble Sort:
 - Bubble sort also known as Sinking Sort/ Exchange Sort.
 - Bubble sort also known as inplace sorting algorithm.
@@ -38,3 +39,13 @@ Time Complexity:
 **Tips**:
 - If range is given by [0, N], then every element will be at `index = value`.
 - If range is given by [1, N], then every element will be at `index = value - 1` or `value = index + 1`.
+
+
+# Sort With Recursion
+
+### Merge Sort:
+
+`**STEPS**`:
+ 1. Divide array into two parts.
+ 2. Get both part sorted via RECURSION.
+ 3. Merge two sorted parts.
