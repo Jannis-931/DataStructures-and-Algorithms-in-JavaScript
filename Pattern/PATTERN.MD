@@ -21,11 +21,14 @@ Print these patterns using loops:
 ```
 
 
-2.  *
+2.  
+```
+    *
     **
     ***
     ****
     *****
+```
 
 ```javascript
 // Ans: 2
