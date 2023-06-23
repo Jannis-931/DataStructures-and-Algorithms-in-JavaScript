@@ -1,15 +1,3 @@
-const findDuplicate = function (nums) {
-    const visited = new Set();
-
-    for (let num of nums) {
-        if (visited.has(num)) {
-            return num;
-        } else {
-            visited.add(num);
-        }
-    };
-    return -1;
-}
-
-const arr = [3,1,3,4,2];
-console.log(findDuplicate(arr));
+const arr =[1, 2]
+const arr2 = [4, 6];
+console.log(arr.concat(arr2))
