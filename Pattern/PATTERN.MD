@@ -2,6 +2,12 @@
 
 ### How to approach:
 
+Only three approach to solve pattern problems:
+1. no.of lines = no.of rows = no.of times outer loop will run
+2. Identify for every row no.
+* How many colums are there.
+* Types of elements in column (*, #, +) or so on.
+3. What do you need to print
 
 
 
@@ -18,6 +24,22 @@ Print these patterns using loops:
     *****
     *****
     *****
+```
+
+```javascript
+// Ans: 1
+const printPattern = function (n) {
+  for (let row = 1; row <= n; row++) {
+    // for every row, run the col
+    let pattern = '';
+    for (let col = 1; col <= n; col++) {
+      pattern += '*';
+    }
+    console.log(pattern);
+  }
+};
+
+printPattern(4);
 ```
 
 
@@ -43,15 +65,33 @@ const printPattern = function (n) {
   }
 };
 
-printPattern(5);
+printPattern(4);
 ```
 
 
-3.  *****
+3.  
+```
+    *****
     ****
     ***
     **
     *
+```
+
+```javascript
+const printPattern = function (n) {
+  for (let row = 1; row <= n; row++) {
+    // for every row, run the col
+    let pattern = '';
+    for (let col = row; col <= n; col++) {
+      pattern += '*';
+    }
+    console.log(pattern);
+  }
+};
+
+printPattern(4);
+```
 
 
 4.  1
