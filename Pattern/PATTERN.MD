@@ -7,7 +7,7 @@ Only three approach to solve pattern problems:
 2. Identify for every row no.
 * How many colums are there.
 * Types of elements in column (*, #, +) or so on.
-3. What do you need to print
+3. What do you need to print (*, #) or any things.
 
 
 
@@ -39,7 +39,7 @@ const printPattern = function (n) {
   }
 };
 
-printPattern(4);
+printPattern(5);
 ```
 
 
@@ -65,7 +65,7 @@ const printPattern = function (n) {
   }
 };
 
-printPattern(4);
+printPattern(5);
 ```
 
 
@@ -83,6 +83,20 @@ const printPattern = function (n) {
   for (let row = 1; row <= n; row++) {
     // for every row, run the col
     let pattern = '';
+    for (let col = 1; col <= n - row + 1; col++) {
+      pattern += '*';
+    }
+    console.log(pattern);
+  }
+};
+
+printPattern(5);
+
+// same
+const printPattern = function (n) {
+  for (let row = 1; row <= n; row++) {
+    // for every row, run the col
+    let pattern = '';
     for (let col = row; col <= n; col++) {
       pattern += '*';
     }
@@ -90,15 +104,33 @@ const printPattern = function (n) {
   }
 };
 
-printPattern(4);
+printPattern(5);
 ```
 
 
-4.  1
+4.  
+```
+    1
     1 2
     1 2 3
     1 2 3 4
     1 2 3 4 5
+```
+
+```javascript
+const printPattern = function (n) {
+  for (let row = 1; row <= n; row++) {
+    // for every row, run the col
+    let pattern = '';
+    for (let col = 1; col <= row; col++) {
+      pattern += col;
+    }
+    console.log(pattern);
+  }
+};
+
+printPattern(5);
+```
 
 
 5.  *

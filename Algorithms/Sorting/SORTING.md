@@ -49,3 +49,7 @@ Time Complexity:
  1. Divide array into two parts.
  2. Get both part sorted via RECURSION.
  3. Merge two sorted parts.
+
+Complexity:
+- Time complexity: O(nlog(n))
+- Space complexity: O(n) only for recursive
