@@ -40,7 +40,6 @@ Time Complexity:
 - If range is given by [0, N], then every element will be at `index = value`.
 - If range is given by [1, N], then every element will be at `index = value - 1` or `value = index + 1`.
 
-
 # Sort With Recursion
 
 ### Merge Sort:
@@ -53,3 +52,13 @@ Time Complexity:
 Complexity:
 - Time complexity: O(nlog(n))
 - Space complexity: O(n) only for recursive
+
+### Quick Sort:
+
+How to Pick Pivot:
+- Random element
+- Corner element [end, start]
+- Pick the middle of the elements
+
+Complexity:
+- Time complexity: O(n^2)
