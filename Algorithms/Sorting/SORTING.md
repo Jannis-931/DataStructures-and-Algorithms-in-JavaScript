@@ -60,5 +60,7 @@ How to Pick Pivot:
 - Corner element [end, start]
 - Pick the middle of the elements
 
+<img src="https://github.com/sajib-mandal/DataStructures-and-Algorithms-in-JavaScript/blob/main/images/QuickSort2.png" height="312" weight="703">
+
 Complexity:
 - Time complexity: O(n^2)
