@@ -54,6 +54,7 @@ Complexity:
 - Space complexity: O(n) only for recursive
 
 ### Quick Sort:
+- It's not stable.
 
 How to Pick Pivot:
 - Random element
@@ -63,4 +64,6 @@ How to Pick Pivot:
 <img src="https://github.com/sajib-mandal/DataStructures-and-Algorithms-in-JavaScript/blob/main/images/QuickSort2.png" height="312" weight="703">
 
 Complexity:
-- Time complexity: O(n^2)
+- Time complexity: 
+1. Best case: O(nlogn)
+2. Worst case: O(n^2)
