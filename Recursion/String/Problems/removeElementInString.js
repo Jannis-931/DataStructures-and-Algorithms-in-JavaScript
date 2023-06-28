@@ -52,17 +52,32 @@
 
 
 // skip apple
-const skipApple = function(str) {
+// const skipApple = function(str) {
+//   if (str.length === 0) {
+//     return '';
+//   }
+
+//   if (str.startsWith('apple')) {
+//     return skipApple(str.substring(5));
+//   } else {
+//     return str.charAt(0) + skipApple(str.substring(1));
+//   }
+// }
+
+// console.log(skipApple('bcdapplefg'));
+
+
+const skipAppNotApple = function(str) {
   if (str.length === 0) {
     return '';
   }
 
-  if (str.startsWith('apple')) {
-    return skipApple(str.substring(5));
+  if (str.startsWith('app') && !str.startsWith('apple')) {
+    return skipAppNotApple(str.substring(3));
   } else {
-    return str.charAt(0) + skipApple(str.substring(1));
+    return str.charAt(0) + skipAppNotApple(str.substring(1));
   }
 }
 
-console.log(skipApple('bcdapplefg'));
+console.log(skipAppNotApple('bcdapplefg'));
 
