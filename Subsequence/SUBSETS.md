@@ -19,3 +19,14 @@ Alternatively, you can use set notation to define a subset:
 A ⊆ B if and only if (for all x) (x ∈ A → x ∈ B)
 
 Here, "x ∈ A" means "x belongs to A" and "x ∈ B" means "x belongs to B". The arrow symbol (→) represents an implication, indicating that if the left side is true (x belongs to A), then the right side must also be true (x belongs to B).
+
+### String
+
+VVI:
+
+This pattern of taking some elements & removing some is known as this subset pattern.
+- Take it.
+- Or ignore it.
+
+SubSequence means Strings
+SubSet means Arrays
