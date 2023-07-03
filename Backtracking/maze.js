@@ -197,9 +197,108 @@ const maze = function(r, c) {
 // console.log(pathRestrictions(board, 0, 0, 0)); // 2
 
 
-const pathRestrictionsAllDirection = function(p, maze, r, c) {
+// const pathRestrictionsAllDirection = function(p, maze, r, c) {
+//   if (r === maze.length - 1 && c === maze[0].length - 1) {
+//     console.log(p);
+//     return;
+//   }
+
+//   if (!maze[r][c]) { // maze[r][c] === false
+//     return;
+//   }
+
+//   // i am considering this block in my path
+//   maze[r][c] = false;
+
+//   if (r < maze.length - 1) {
+//     pathRestrictionsAllDirection(p + 'D', maze, r + 1, c);
+//   }
+
+//   if (c < maze[0].length - 1) {
+//     pathRestrictionsAllDirection(p + 'R', maze, r, c + 1);
+//   }
+
+//   if (r > 0) {
+//     pathRestrictionsAllDirection(p + 'U', maze, r - 1, c);
+//   }
+
+//   if (c > 0) {
+//     pathRestrictionsAllDirection(p + 'L', maze, r, c - 1);
+//   }
+
+//   // this line is wher the function will be over
+//   // so before the function gets removed, also remove the changes that were made by function
+//   maze[r][c] = true;
+// }
+
+// const board = [
+//   [true, true, true],
+//   [true, true, true],
+//   [true, true, true]
+// ];
+
+// pathRestrictionsAllDirection('', board, 0, 0);
+
+
+// const pathRestrictionsAllDirection = function(p, maze, r, c, path, step) {
+//   if (r === maze.length - 1 && c === maze[0].length - 1) {
+//     path[r][c] = step;
+//     for (const arr of path) {
+//       console.log(arr);
+//     }
+//     console.log(p);
+//     return;
+//   }
+
+//   if (!maze[r][c]) { // maze[r][c] === false
+//     return;
+//   }
+
+//   // i am considering this block in my path
+//   maze[r][c] = false;
+
+//   path[r][c] = step;
+
+//   if (r < maze.length - 1) {
+//     pathRestrictionsAllDirection(p + 'D', maze, r + 1, c, path, step + 1);
+//   }
+
+//   if (c < maze[0].length - 1) {
+//     pathRestrictionsAllDirection(p + 'R', maze, r, c + 1, path, step + 1);
+//   }
+
+//   if (r > 0) {
+//     pathRestrictionsAllDirection(p + 'U', maze, r - 1, c, path, step + 1);
+//   }
+
+//   if (c > 0) {
+//     pathRestrictionsAllDirection(p + 'L', maze, r, c - 1, path, step + 1);
+//   }
+
+//   // this line is wher the function will be over
+//   // so before the function gets removed, also remove the changes that were made by function
+//   maze[r][c] = true;
+//   path[r][c] = 0;
+// }
+
+// const board = [
+//   [true, true, true],
+//   [true, true, true],
+//   [true, true, true]
+// ];
+// int[][] path = new int[board.length][board[0].length];
+
+// pathRestrictionsAllDirection('', board, 0, 0, path, 1);
+
+
+const pathRestrictionsAllDirection = function(p, maze, r, c, path, step) {
   if (r === maze.length - 1 && c === maze[0].length - 1) {
+    path[r][c] = step;
+    for (const arr of path) {
+      console.log(arr);
+    }
     console.log(p);
+    console.log(); // new line
     return;
   }
 
@@ -207,27 +306,39 @@ const pathRestrictionsAllDirection = function(p, maze, r, c) {
     return;
   }
 
+  // Consider this block in the path
+  maze[r][c] = false;
+
+  path[r][c] = step;
+
   if (r < maze.length - 1) {
-    pathRestrictionsAllDirection(p + 'D', maze, r + 1, c);
+    pathRestrictionsAllDirection(p + 'D', maze, r + 1, c, path, step + 1);
   }
 
   if (c < maze[0].length - 1) {
-    pathRestrictionsAllDirection(p + 'R', maze, r, c + 1);
+    pathRestrictionsAllDirection(p + 'R', maze, r, c + 1, path, step + 1);
   }
 
   if (r > 0) {
-    pathRestrictionsAllDirection(p + 'U', maze, r - 1, c);
+    pathRestrictionsAllDirection(p + 'U', maze, r - 1, c, path, step + 1);
   }
 
   if (c > 0) {
-    pathRestrictionsAllDirection(p + 'L', maze, r, c - 1);
+    pathRestrictionsAllDirection(p + 'L', maze, r, c - 1, path, step + 1);
   }
-}
+
+  // Before the function ends, revert the changes made by the function
+  maze[r][c] = true;
+  path[r][c] = 0;
+};
 
 const board = [
   [true, true, true],
   [true, true, true],
   [true, true, true]
 ];
+const path = new Array(board.length).fill(0).map(() => new Array(board[0].length).fill(0));
 
-pathRestrictionsAllDirection('', board, 0, 0);
+pathRestrictionsAllDirection('', board, 0, 0, path, 1);
+
+
