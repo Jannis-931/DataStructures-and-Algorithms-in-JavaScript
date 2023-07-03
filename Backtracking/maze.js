@@ -166,27 +166,63 @@ const maze = function(r, c) {
 
 // console.log(pathRestrictions(board, 0, 0, 0)); // 2
 
-const pathRestrictions = function(maze, r, c, count) {
+// const pathRestrictions = function(maze, r, c, count) {
+//   if (r === maze.length - 1 && c === maze[0].length - 1) {
+//     return count + 1;
+//   }
+
+//   if (!maze[r][c]) { // maze[r][c] === false
+//     return 0; 
+//   }
+
+//   let totalCount = 0;
+
+//   if (r < maze.length - 1) {
+//     totalCount += pathRestrictions(maze, r + 1, c, count);
+//   }
+
+//   if (c < maze[0].length - 1) {
+//     totalCount += pathRestrictions(maze, r, c + 1, count); // pass count as an argument
+//   }
+
+//   return totalCount;
+// };
+
+// const board = [
+//   [true, true, true],
+//   [true, true, true],
+//   [true, true, true]
+// ];
+
+// console.log(pathRestrictions(board, 0, 0, 0)); // 2
+
+
+const pathRestrictionsAllDirection = function(p, maze, r, c) {
   if (r === maze.length - 1 && c === maze[0].length - 1) {
-    return count + 1;
+    console.log(p);
+    return;
   }
 
   if (!maze[r][c]) { // maze[r][c] === false
-    return 0; 
+    return;
   }
 
-  let totalCount = 0;
-
   if (r < maze.length - 1) {
-    totalCount += pathRestrictions(maze, r + 1, c, count);
+    pathRestrictionsAllDirection(p + 'D', maze, r + 1, c);
   }
 
   if (c < maze[0].length - 1) {
-    totalCount += pathRestrictions(maze, r, c + 1, count); // pass count as an argument
+    pathRestrictionsAllDirection(p + 'R', maze, r, c + 1);
   }
 
-  return totalCount;
-};
+  if (r > 0) {
+    pathRestrictionsAllDirection(p + 'U', maze, r - 1, c);
+  }
+
+  if (c > 0) {
+    pathRestrictionsAllDirection(p + 'L', maze, r, c - 1);
+  }
+}
 
 const board = [
   [true, true, true],
@@ -194,4 +230,4 @@ const board = [
   [true, true, true]
 ];
 
-console.log(pathRestrictions(board, 0, 0, 0)); // 2
+pathRestrictionsAllDirection('', board, 0, 0);
